@@ -20,7 +20,7 @@
       id INT UNIQUE,
       email VARCHAR(255) PRIMARY KEY,
       password VARCHAR(255),
-      info INT references UserInfo(id),
+      info INT  rferences UserInfo(id) UNIQUE,
       role INT references Roles(id)
   );
 
@@ -48,7 +48,8 @@
 
  CREATE TABLE Order2Product (
      orders int references Orders(id),
-     product int references Product(id)
+     product int references Product(id),
+     PRIMARY KEY (orders,product)
  );
 
 ALTER TABLE Orders ADD COLUMN created timestamp;
