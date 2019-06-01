@@ -20,7 +20,7 @@
       id INT UNIQUE,
       email VARCHAR(255) PRIMARY KEY,
       password VARCHAR(255),
-      info INT  rferences UserInfo(id) UNIQUE,
+      info INT references UserInfo(id) UNIQUE,
       role INT references Roles(id)
   );
 
